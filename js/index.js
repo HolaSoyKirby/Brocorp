@@ -42,7 +42,8 @@ getConcesionarias = async () => {
 
 fillMapMarkers = () => {
     concesionarias.forEach(e => {
-        L.marker([e.Latitud, e.Longitud]).addTo(mymap);
+        let marker = L.marker([e.Latitud, e.Longitud]).addTo(mymap);
+        marker.bindPopup('<img src="' + e.Imagen + '" style="height: 80px; object-fit: cover; align-content: center;"><h6>' + e.Nombre + '</h6><btn onclick="goDetails(' + e.id + ')" class="btn btn-primary">Ver Detalles</btn>')
     });
 }
 
