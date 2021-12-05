@@ -1,14 +1,23 @@
 let autos = [];
 let selectedFirst = 0,
     selectedSecond = 1;
+    let concesionaria;
 
 getAutos = async () => {
-    const snapshot = await firebase.firestore().collection('Autos').doc('xhbxbetttLpnsRutk9sM').get();
+    console.log(localStorage.getItem("data"));
+    concesionaria = JSON.parse(localStorage.getItem("data"));
+    console.log(concesionaria);
+    const snapshot = await firebase.firestore().collection('Autos').doc(concesionaria.id).get();
+    console.log(snapshot.data());
     autos = snapshot.data().Autos;
     console.log(autos);
     autos.sort((a, b) => (a.Modelo > b.Modelo ? 1 : -1));
     renderList();
     renderCards();
+    document.getElementById('txtConcesionaria').innerHTML = concesionaria.Nombre;
+    document.getElementById('txtConcesionariaTelefono').innerHTML = concesionaria.Contacto.Telefono;
+    document.getElementById('txtConcesionariaPaginaWeb').innerHTML = concesionaria.Contacto.PaginaWeb;
+    document.getElementById('imgLogo').src = concesionaria.Logo;
 }
 
 renderList = () => {

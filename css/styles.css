@@ -23,3 +23,12 @@
 #TituloCarrusel {}
 
 #btn-next {}
+
+.card {
+	transition: 0.5s;
+}
+.card:hover {
+	background-color: rgb(170, 170, 170);
+	transition: 0.5s;
+	cursor: pointer;
+}
