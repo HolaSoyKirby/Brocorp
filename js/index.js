@@ -43,7 +43,7 @@ getConcesionarias = async () => {
 fillMapMarkers = () => {
     concesionarias.forEach(e => {
         let marker = L.marker([e.Latitud, e.Longitud]).addTo(mymap);
-        marker.bindPopup('<img src="' + e.Imagen + '" style="height: 80px; object-fit: cover; align-content: center;"><h6>' + e.Nombre + '</h6><btn onclick="goDetails(' + e.id + ')" class="btn btn-primary">Ver Detalles</btn>')
+        marker.bindPopup('<h5><strong>' + e.Nombre + '</strong></h5><img src="' + e.Imagen + '" class="img-fluid""><btn onclick="goDetails(' + e.id + ')" class="btn btn-primary mt-2">Ver Concesionaria</btn>')
     });
 }
 
@@ -56,9 +56,9 @@ fillRenderCards = () => {
             '<div class="card-body">' +
             '<h5 class="card-title">' + e.Nombre + '</h5>' +
             '<p class="card-text" id="idP3">' +
-            'Horario: ' + e.Contacto.Horario + '<br>' +
-            'Página web: <a href="' + e.Contacto.PaginaWeb + '">' + e.Contacto.PaginaWeb + '</a><br>' +
-            'Teléfono: ' + e.Contacto.Telefono +
+            '<strong>Horario: </strong>' + e.Contacto.Horario + '<br>' +
+            '<strong>Página web: </strong><a href="' + e.Contacto.PaginaWeb + '">' + e.Contacto.PaginaWeb + '</a><br>' +
+            '<strong>Teléfono: </strong>' + e.Contacto.Telefono +
             '</p>' +
             '<a onclick="goDetails(' + e.id + ')" class="btn btn-primary">Ver Detalles</a>' +
             '</div>' +
