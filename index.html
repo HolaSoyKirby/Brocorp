@@ -39,19 +39,19 @@
 <body onload="getConcesionarias()">
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <h4>Torrez Motorz</h4>
+    <img src="./img/TM.png" style="margin-left: auto; margin-right: auto; width: 50%;">
     </nav>
 
     <div class="container mt-5">
         <h1 class="text-center">Encuentra tu vehiculo deseado</h1>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 col-12">
             <input id="txtAddress" type="text" class="form-control" placeholder="Mi ubicacion" aria-label="Username"
                 aria-describedby="basic-addon1" disabled>
         </div>
     </div>
 
     <div id="map"></div>
-    <h1 id="TituloCarrusel" class="text-center">Nuestras consecionarias</h1>
+    <h1 id="TituloCarrusel" class="text-center">Nuestras concesionarias</h1>
     <div class="container">
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -60,7 +60,7 @@
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next" style="left: 1600px;top: 850px;">
+            data-bs-slide="next" style="top: 850px; margin-right: 1vh;">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -96,13 +96,14 @@
             </div>
             <div class="col-6">
 
-                <img src="./img/siu.jpg" class="img-thumbnail" alt="...">
+                <img src="./img/meshe.jpg" class="img-thumbnail" alt="...">
             </div>
         </div>
     </div>
 
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-        <div id="liveToast" class="toast hide text-white" style="background-color: rgba(0, 0, 0, 0.85);" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="liveToast" class="toast hide text-white" style="background-color: rgba(0, 0, 0, 0.85);" role="alert"
+            aria-live="assertive" aria-atomic="true">
             <div class="toast-body">
                 <div class="row">
                     <div class="col-8">

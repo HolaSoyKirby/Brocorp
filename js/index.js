@@ -79,7 +79,7 @@ getUserCoordinates = (position) => {
         .then(data => document.getElementById('txtAddress').value = data.display_name)
 
     let greenIcon = new L.Icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
@@ -100,13 +100,23 @@ getUserCoordinates = (position) => {
 //Map Markers
 fillMapMarkers = () => {
     concesionarias.forEach((e, i) => {
-        let marker = L.marker([e.Latitud, e.Longitud]).addTo(mymap);
+        let blackIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+        let marker = L.marker([e.Latitud, e.Longitud], {
+            icon: blackIcon
+        }).addTo(mymap);
         marker.bindPopup('<h5><strong>' + e.Nombre + '</strong></h5><img src="' + e.Imagen + '" class="img-fluid""><div class="row mt-2">' +
         '<div class="col-6">' +
-        '<button title="Ver Detalles" onclick="goDetails(' + i + ')" class="btn btn-primary" style="width: 100%;">' +
+        '<button title="Ver Detalles" onclick="goDetails(' + i + ')" class="btn btn-dark" style="width: 100%;">' +
         '<i class="fas fa-car"></i></button></div>' +
         '<div class="col-6">' +
-        '<button title="Trazar Ruta" onclick="traceRoute(' + e.Latitud + ',' + e.Longitud + ',' + i + ')" class="btn btn-primary" style="width: 100%;">' +
+        '<button title="Trazar Ruta" onclick="traceRoute(' + e.Latitud + ',' + e.Longitud + ',' + i + ')" class="btn btn-dark" style="width: 100%;">' +
         '<i class="fas fa-map-marked-alt"></i></i></button>');
         
         concesionariaMarkers.push(marker);
@@ -123,10 +133,10 @@ fillRenderCards = () => {
             '<h5 class="card-title">' + e.Nombre + '</h5>' +
             '<p class="card-text" id="idP3">' +
             '<strong>Horario: </strong>' + e.Contacto.Horario + '<br>' +
-            '<strong>Página web: </strong><a href="' + e.Contacto.PaginaWeb + '">' + e.Contacto.PaginaWeb + '</a><br>' +
+            '<strong>Página web: </strong><a class="hyperlink" href="' + e.Contacto.PaginaWeb + '">' + e.Contacto.PaginaWeb + '</a><br>' +
             '<strong>Teléfono: </strong>' + e.Contacto.Telefono +
             '</p>' +
-            '<a onclick="goDetails(' + i + ')" class="btn btn-primary">Ver Detalles</a>' +
+            '<a onclick="goDetails(' + i + ')" class="btn btn-dark">Ver Detalles</a>' +
             '</div>' +
             '</div>' +
             '</div>'

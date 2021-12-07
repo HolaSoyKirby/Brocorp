@@ -13,6 +13,7 @@
 	height: 400px;
 	object-fit: cover;
 	z-index: 0;
+	border: solid 1px rgb(117, 117, 117);
 }
 
 #inputDiv {
@@ -25,10 +26,21 @@
 #btn-next {}
 
 .card {
+	cursor: pointer;
+}
+
+
+.btn-light {
+	border-color: rgb(88, 88, 88);
 	transition: 0.5s;
 }
-.card:hover {
-	background-color: rgb(170, 170, 170);
+
+.btn-light:hover {
+	border-color: rgb(63, 63, 63);
+	color: rgb(63, 63, 63);
 	transition: 0.5s;
-	cursor: pointer;
+}
+
+.hyperlink {
+	color: black;
 }

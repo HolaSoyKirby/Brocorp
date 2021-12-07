@@ -87,7 +87,7 @@ select = (i) => {
         selectedFirst = selectedSecond;
         selectedSecond = i;
         let setBg = document.getElementById(`check${selectedSecond}`);
-        setBg.style.backgroundImage = "url(../img/star.png)";
+        setBg.style.backgroundImage = "url(../img/x.png)";
         renderCards();
     }
 }
