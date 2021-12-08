@@ -118,7 +118,7 @@ fillMapMarkers = () => {
         '<i class="fas fa-car"></i></button></div>' +
         '<div class="col-6">' +
         '<button title="Trazar Ruta" onclick="traceRoute(' + e.Latitud + ',' + e.Longitud + ',' + i + ')" class="btn btn-dark" style="width: 100%;">' +
-        '<i class="fas fa-map-marked-alt"></i></i></button>');
+        '<i class="fas fa-map-marked-alt"></i></button>');
         
         concesionariaMarkers.push(marker);
     });
@@ -137,10 +137,11 @@ fillRenderCards = () => {
             '<strong>Página web: </strong><a class="hyperlink" href="' + e.Contacto.PaginaWeb + '">' + e.Contacto.PaginaWeb + '</a><br>' +
             '<strong>Teléfono: </strong>' + e.Contacto.Telefono +
             '</p>' +
-            '<a onclick="goDetails(' + i + ')" class="btn btn-dark">Ver Detalles</a>' +
-            '</div>' +
-            '</div>' +
-            '</div>'
+            '<div class="row"><div class="col-6">' + 
+            '<button style="width: 100%;" onclick="goDetails(' + i + ')" class="btn btn-dark"><i class="fas fa-car"></i> Ver Detalles</button>' +
+            '</div><div class="col-6">' + 
+            '<button style="width: 100%;" onclick="traceRoute(' + e.Latitud + ',' + e.Longitud + ',' + i + ')" class="btn btn-dark"><i class="fas fa-map-marked-alt"></i> Trazar Ruta</button>' +
+            '</div></div></div></div></div>'
         );
     })
 }
