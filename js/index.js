@@ -69,7 +69,6 @@ getCurrentLocation = () => {
 
 // Fill User Data: Put User Marker and Put Address in Screen
 getUserCoordinates = (position) => {
-    alert(position);
     userCoords = {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude
